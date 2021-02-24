@@ -46,6 +46,6 @@ int main() {
 
 /* 
     commands: 
-    g++ -o src/test1.exe src/calc.cpp
-    src/test1.exe
+    g++ -o src/calculadora/test1.exe src/calc.cpp
+    src/calculadora/test1.exe
 */
