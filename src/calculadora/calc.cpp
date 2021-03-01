@@ -1,26 +1,7 @@
 #include <iostream>
+#include "operations.h"
 
 using namespace std;
-
-double somar(double n1, double n2) {
-    return n1 + n2;
-}
-
-double subtrair(double n1, double n2) {
-    return n1 - n2;
-}
-
-double multiplicar(double n1, double n2) {
-    return n1 * n2;
-}
-
-double dividir(double n1, double n2) {
-    if (n2 != 0)
-        return n1 / n2;
-    else
-        cout << "Impossivel dividir por ZERO!" << endl;
-    return 0;
-}
 
 int main() {
     double n1 = 0, n2 = 0;
@@ -35,9 +16,15 @@ int main() {
         cout << "Soma -> " << somar(n1, n2) << endl;
         cout << "Subtracao -> " << subtrair(n1, n2) << endl;
         cout << "Multiplicacao -> " << multiplicar(n1, n2) << endl;
-        cout << "Divisao -> " << dividir(n1, n2) << endl;
-
-        cout << "Para encerrar digite 0, para calcular novamente digite outro numero inteiro:";
+        
+        int result = dividir(n1, n2);
+        
+        if (result == -1)
+            cout << "Impossivel dividir por ZERO!" << endl;
+        else
+            cout << "Divisao -> " << result << endl;
+        
+        cout << "Para encerrar digite 0, para calcular novamente digite outro numero inteiro:" << endl;
         cin >> resp;
     } while (resp != 0);
     
@@ -46,6 +33,6 @@ int main() {
 
 /* 
     commands: 
-    g++ -o src/calculadora/test1.exe src/calc.cpp
+    g++ -o src/calculadora/test1.exe src/calculadora/calc.cpp
     src/calculadora/test1.exe
 */
